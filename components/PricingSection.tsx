@@ -41,7 +41,7 @@ export default function PricingSection() {
   return (
     <section
       id="cjenovnik"
-      className="py-20 bg-gradient-to-r from-white via-green-50 to-green-100"
+      className="pt-20 scroll-mt-24 bg-gradient-to-r from-white via-green-50 to-green-100"
     >
       <FadeIn className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gradient-accent">
@@ -130,7 +130,7 @@ export default function PricingSection() {
           </div>
         </div>
       </FadeIn>
-      <div className="w-full h-[50px] hidden md:block bg-primary-accent"/>
+      <div className="w-full h-[50px] hidden md:block bg-gradient-to-b from-primary-accent to-transparent"/>
     </section>
   );
 }
