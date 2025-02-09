@@ -9,7 +9,7 @@ import Image from "next/image";
 
 
 export default function PricingSection() {
-  const [isYearly, setIsYearly] = useState(false);
+  const [isYearly, setIsYearly] = useState(true);
 
   const pricingPlan = isYearly
     ? {

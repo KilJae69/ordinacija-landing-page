@@ -42,8 +42,8 @@ export default function HeroSection() {
             <Button className="text-lg ">Počnite danas</Button>
             <FadeInStagger>
               <ul className="space-y-2 mt-6  text-lg tracking-widest">
-                <FadeIn>
-                  <li className="flex items-center">
+                <li >
+                  <FadeIn className="flex items-center">
                     <svg
                       className="w-5 h-5 text-green-500 mr-2"
                       fill="none"
@@ -59,10 +59,10 @@ export default function HeroSection() {
                       />
                     </svg>
                     Jednostavno upravljanje pacijentima
-                  </li>
-                </FadeIn>
-                <FadeIn>
-                  <li className="flex items-center">
+                  </FadeIn>
+                </li>
+                  <li >
+                <FadeIn className="flex items-center">
                     <svg
                       className="w-5 h-5 text-green-500 mr-2"
                       fill="none"
@@ -78,10 +78,10 @@ export default function HeroSection() {
                       />
                     </svg>
                     Kalendar i zakazivanje pregleda
-                  </li>
                 </FadeIn>
-                <FadeIn>
-                  <li className="flex items-center">
+                  </li>
+                  <li >
+                  <FadeIn className="flex items-center">
                     <svg
                       className="w-5 h-5 text-green-500 mr-2"
                       fill="none"
@@ -97,10 +97,10 @@ export default function HeroSection() {
                       />
                     </svg>
                     Kreiranje i spremanje nalaza i mišljenja
-                  </li>
                 </FadeIn>
-                <FadeIn>
-                  <li className="flex items-center">
+                  </li>
+                  <li >
+                  <FadeIn className="flex items-center">
                     <svg
                       className="w-5 h-5 text-green-500 mr-2"
                       fill="none"
@@ -116,14 +116,13 @@ export default function HeroSection() {
                       />
                     </svg>
                     Kompletan prikaz pregleda na jednom mjestu
-                  </li>
                 </FadeIn>
+                  </li>
               </ul>
             </FadeInStagger>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0 relative z-10">
             <Image
-              
               src="/ordinacija-kalendar.png"
               alt="Ordinacija CMS Dashboard"
               width={800}

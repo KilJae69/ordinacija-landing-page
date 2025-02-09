@@ -52,7 +52,7 @@ export default function Header() {
                         stiffness: 380,
                         damping: 30,
                       }}
-                      className="bg-green-100 rounded-full absolute inset-0 -z-10"
+                      className="bg-green-50 rounded-full absolute inset-0 -z-10"
                     />
                   )}
                 </Link>
