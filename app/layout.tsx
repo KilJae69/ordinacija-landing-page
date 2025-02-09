@@ -4,6 +4,7 @@ import "./globals.css";
 import { LazyMotion, domAnimation } from "framer-motion";
 import Header from "@/components/Header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
+import Footer from "@/components/Footer";
 
 
 const poppins = Poppins({
@@ -33,6 +34,7 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header /> 
             {children}
+            <Footer/>
           </ActiveSectionContextProvider>
         </LazyMotion>
       </body>
