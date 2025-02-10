@@ -14,9 +14,9 @@ export default function PricingSection() {
   const pricingPlan = isYearly
     ? {
         name: "Godišnje",
-        price: "120 KM",
+        price: "13.50 KM",
         description:
-          "Naplaćuje se godišnje. Uštedite 20% u poređenju sa mjesečnim planom.",
+          "Naplaćuje se godišnje. Uštedite 15% u poređenju sa mjesečnim planom.",
         cta: "Počnite besplatno",
         features: [
           "14 dana besplatno",
@@ -44,10 +44,10 @@ export default function PricingSection() {
       className="pt-20 scroll-mt-24 bg-gradient-to-r from-white via-green-50 to-green-100"
     >
       <FadeIn className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gradient-accent">
+        <h2 className="text-3xl md:text-6xl leading-10 font-bold text-center mb-8 text-black">
           Izaberite Vaš plan
         </h2>
-        <p className="text-center text-gray-600 mb-12">
+        <p className="text-center text-lg text-gray-600 mb-12">
           Počnite sa 14 dana besplatno i uvjerite se da je{" "}
           <span className="text-gradient-accent font-semibold">
             OrdinacijaCMS
@@ -83,7 +83,7 @@ export default function PricingSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-white mb-5 p-8 rounded-lg min-w-[330px] shadow-lg border border-gray-100 max-w-md w-full"
+              className="bg-white mb-20 md:mb-32 p-8 rounded-lg min-w-[330px] shadow-lg border border-gray-100 max-w-md w-full"
             >
               <h3 className="text-2xl font-bold mb-4 text-gray-800">
                 {pricingPlan.name}
@@ -92,7 +92,7 @@ export default function PricingSection() {
               <div className="text-4xl font-bold mb-6 text-primary-accent">
                 {pricingPlan.price}
                 <span className="text-lg text-gray-500">
-                  {isYearly ? "/godišnje" : "/mjesečno"}
+                  {isYearly ? "/mjesečno" : "/mjesečno"}
                 </span>
               </div>
               <ul className="space-y-3 mb-8">
@@ -130,7 +130,7 @@ export default function PricingSection() {
           </div>
         </div>
       </FadeIn>
-      <div className="w-full h-[50px] hidden md:block bg-gradient-to-b from-primary-accent to-transparent"/>
+      {/* <div className="w-full h-[50px] hidden md:block bg-gradient-to-b from-primary-accent to-transparent"/> */}
     </section>
   );
 }

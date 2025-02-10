@@ -12,11 +12,12 @@ export default function FeaturesSection() {
       <div className="lg:container lg:mx-auto">
         <FadeInStagger>
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-20 text-gradient-accent">
+          <h2 className="text-3xl md:text-6xl leading-10 font-bold text-center mb-8 text-black">
               Pogodnosti koje nudimo za Vašu praksu
             </h2>
+            
           </FadeIn>
-          <FadeIn>
+          <FadeIn className="mt-20">
             <AnimatedFeaturesTab />
           </FadeIn>
         </FadeInStagger>

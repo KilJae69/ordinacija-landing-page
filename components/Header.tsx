@@ -24,7 +24,7 @@ export default function Header() {
           <Logo />
 
           {/* Navigation Links */}
-          <ul className="flex flex-wrap sm:flex-nowrap justify-center gap-1 sm:gap-2 text-xs xs:text-sm md:text-lg font-medium text-gray-500">
+          <ul className="flex flex-wrap sm:flex-nowrap justify-center gap-1 sm:gap-2 font-semibold text-xs xs:text-sm tracking-wider uppercase  text-gray-500">
             {links.map((link) => (
               <motion.li
                 key={link.hash}

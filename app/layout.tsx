@@ -28,12 +28,15 @@ export default function RootLayout({
   return (
     <html lang="bs"  className="!scroll-smooth ">
       <body
-        className={`${poppins.variable}  antialiased`}
+        className={`${poppins.variable}  antialiased flex flex-col min-h-screen`}
       >
         <LazyMotion features={domAnimation}>
           <ActiveSectionContextProvider>
             <Header /> 
+            <main className="flex-1">
+
             {children}
+            </main>
             <Footer/>
           </ActiveSectionContextProvider>
         </LazyMotion>

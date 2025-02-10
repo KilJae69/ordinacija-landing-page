@@ -74,7 +74,7 @@ const AnimatedFeaturesTab: React.FC = () => {
             {features.map((feature, index) => (
               <Tab
                 key={index}
-                className={`flex items-center p-4 rounded-lg cursor-pointer transition-colors duration-300 ${
+                className={`flex items-center p-4 rounded-lg cursor-pointer transition-colors duration-300 focus:outline-none ${
                   selectedTab === index
                     ? "bg-primary-accent text-white"
                     : "bg-white hover:bg-gray-100"

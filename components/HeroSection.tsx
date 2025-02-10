@@ -21,7 +21,7 @@ export default function HeroSection() {
             <h1 className="text-4xl md:text-5xl font-bold text-primary my-4">
               <RotatingText
                 texts={["Moderno", "Efikasno", "Isplativo"]}
-                mainClassName="px-2 sm:px-2 md:px-3 bg-[#24ae7c] w-fit mb-4 text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                mainClassName="px-2 min-w-[190px] sm:min-w-[245px] md:px-3 bg-[#24ae7c] w-fit mb-4 text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}

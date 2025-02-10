@@ -56,10 +56,10 @@ export default function FAQSection() {
   return (
     <section ref={ref} id="pitanja" className=" py-20">
       <FadeIn className="md:container md:mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gradient-accent">
+      <h2 className="text-3xl md:text-6xl leading-10 font-bold text-center mb-8 text-black">
           Najčešće postavljena pitanja
         </h2>
-        <p className="text-center text-gray-600 mb-12">
+        <p className="text-center text-lg text-gray-600 mb-12">
          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et magni accusantium mollitia est distinctio enim officiis, voluptatem natus, esse reiciendis quo velit! A quaerat, repudiandae aliquid officia fugiat id nulla.
         </p>
         <div className="max-w-3xl mx-auto">
