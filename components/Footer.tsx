@@ -16,7 +16,7 @@ export default function Footer() {
             <a
               target="__blank"
               rel="noopener noreferrer"
-              href="https://spark-studio-dev.com/"
+              href="https://spark-dev-studio.com/"
               className="underline"
             >
               <span className="text-yellow-500">Spark</span>Studio
