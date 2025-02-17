@@ -1,70 +1,54 @@
 "use client";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { links } from "@/lib/data";
-import clsx from "clsx";
-import { useActiveSectionContext } from "@/context/active-section-context";
+
+import { m, useMotionValueEvent, useScroll } from "framer-motion";
+
 import Logo from "./Logo";
 import Button from "./shared/Button";
+import { useState } from "react";
+
 
 export default function Header() {
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useActiveSectionContext();
+  const { scrollY } = useScroll(); // Framer's built-in scroll tracking
+  const [scrolled, setScrolled] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 50); // Set `true` if scrolled past 50px
+  });
 
   return (
-    <header className="z-[999] relative">
-      <motion.nav
-        initial={{ y: -200, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+    <header className="z-[999] relative w-full ">
+      <m.nav
+        initial={{ y: -250, x: "-50%", opacity: 0 }}
+        animate={{ y: 2, x: "-50%", opacity: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        className="fixed top-0 left-0 right-0 bg-white bg-opacity-80 backdrop-blur-[0.5rem] shadow-lg shadow-green-500/[0.03] border-b border-primary-accent border-opacity-40 sm:top-2 sm:left-2 sm:right-2 sm:border sm:rounded-full"
+        className={`fixed  px-2 container xs:px-6 xs:top-2 xs:left-1/2 xs:rounded-full transition-all duration-300 ${
+          scrolled
+            ? "bg-white bg-opacity-80 backdrop-blur-[0.5rem] shadow-lg "
+            : "bg-transparent shadow-none border-0"
+        }`}
       >
-        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0 py-2 sm:py-5">
+        <m.div
+          animate={{ height: scrolled ? 70 : 100 }}
+          transition={{ duration: 0.3 }}
+          className=" mx-auto  flex items-center justify-between gap-2 xs:gap-0 py-2 xs:py-5"
+        >
           {/* Logo */}
-          <Logo />
+          <m.div
+            animate={{ scale: scrolled ? 0.8 : 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Logo />
+          </m.div>
 
-          {/* Navigation Links */}
-          <ul className="flex flex-wrap sm:flex-nowrap justify-center gap-1 sm:gap-2 font-semibold text-xs xs:text-sm tracking-wider uppercase  text-gray-500">
-            {links.map((link) => (
-              <motion.li
-                key={link.hash}
-                className="h-3/4 flex items-center justify-center relative"
-              >
-                <Link
-                  onClick={() => {
-                    setActiveSection(link.name);
-                    setTimeOfLastClick(Date.now());
-                  }}
-                  className={clsx(
-                    "flex items-center justify-center px-3 py-3 hover:text-primary-accent transition",
-                    {
-                      "text-primary-accent": activeSection === link.name,
-                    }
-                  )}
-                  href={link.hash}
-                >
-                  {link.name}
-                  {link.name === activeSection && (
-                    <motion.span
-                      layoutId="activeSection"
-                      transition={{
-                        type: "spring",
-                        stiffness: 380,
-                        damping: 30,
-                      }}
-                      className="bg-green-100 rounded-full absolute inset-0 -z-10"
-                    />
-                  )}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-
-          {/* Button */}
-         
-          <Button className="w-full sm:w-fit">Aplikacija</Button>
-        </div>
-      </motion.nav>
+          <div className="flex gap-4">
+            <Button className="w-full sm:w-fit">Aplikacija</Button>
+            <Button invert href="/kontakt" className="w-full sm:w-fit">
+              Kontakt
+            </Button>
+          </div>
+        </m.div>
+      </m.nav>
+     
     </header>
   );
 }
