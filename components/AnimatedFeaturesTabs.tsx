@@ -62,80 +62,78 @@ const AnimatedFeaturesTab: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
-   
-      <div className=" w-full px-4">
-       
-        <Tabs
-          selectedIndex={selectedTab}
-          onSelect={(index) => setSelectedTab(index)}
-          className="flex flex-col md:flex-row"
-        >
-          <TabList className="flex flex-col space-y-2 md:w-1/3 md:pr-8">
-            {features.map((feature, index) => (
-              <Tab
-                key={index}
-                className={`flex items-center p-4 rounded-lg cursor-pointer transition-colors duration-300 focus:outline-none ${
-                  selectedTab === index
-                    ? "bg-primary-accent text-white"
-                    : "bg-white hover:bg-gray-100"
-                }`}
+    <div className=" w-full px-4">
+      <Tabs
+        selectedIndex={selectedTab}
+        onSelect={(index) => setSelectedTab(index)}
+        className="flex flex-col md:flex-row"
+      >
+        <TabList className="flex flex-col space-y-2 md:w-1/3 md:pr-8">
+          {features.map((feature, index) => (
+            <Tab
+              key={index}
+              className={`flex items-center p-4 rounded-lg cursor-pointer transition-colors duration-300 focus:outline-none ${
+                selectedTab === index
+                  ? "bg-primary-accent text-white"
+                  : "bg-white hover:bg-gray-100"
+              }`}
+            >
+              <m.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+                className="flex items-center"
               >
-                <m.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex items-center"
-                >
-                  {feature.icon}
-                  <span className="ml-3 font-semibold ">{feature.title}</span>
-                </m.div>
-              </Tab>
-            ))}
-          </TabList>
-          <div className="mt-8 md:mt-0 md:w-2/3">
-            {features.map((feature, index) => (
-              <TabPanel key={index}>
-                <AnimatePresence mode="wait">
-                  {selectedTab === index && (
+                {feature.icon}
+                <span className="ml-3 font-semibold ">{feature.title}</span>
+              </m.div>
+            </Tab>
+          ))}
+        </TabList>
+        <div className=" mt-8 md:mt-0 md:w-2/3 ">
+         
+          {features.map((feature, index) => (
+            <TabPanel  key={index}>
+              <AnimatePresence mode="wait">
+                {selectedTab === index && (
+                  <m.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-gradient-to-r from-white via-green-50 to-green-100  rounded-lg shadow-lg  gap-8"
+                  >
+                    <div className="p-6">
+                      <h3 className="text-2xl font-semibold mb-4 text-gradient-accent">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 mb-6">
+                        {feature.description}
+                      </p>
+                    </div>
                     <m.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5 }}
-                      className="bg-gradient-to-r from-white via-green-50 to-green-100  rounded-lg shadow-lg  gap-8"
+                      className="relative w-full min-h-[300px] lg:min-h-[500px] "
                     >
-                      <div className="p-6">
-                        <h3 className="text-2xl font-semibold mb-4 text-gradient-accent">
-                          {feature.title}
-                        </h3>
-                        <p className="text-gray-600 mb-6">
-                          {feature.description}
-                        </p>
-                      </div>
-                      <m.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        className="relative w-full min-h-[300px] lg:min-h-[500px] "
-                      >
-                        <Image
-                          src={feature.image || "/ordinacija-kalendar.png"}
-                          alt={feature.title}
-                          fill
-                          className="rounded-lg shadow-md  size-full object-cover object-center-top"
-                          sizes="(min-width: 1540px) 1003px, (min-width: 1280px) 832px, (min-width: 1120px) 677px, (min-width: 780px) calc(55.94vw + 63px), (min-width: 480px) calc(100vw - 32px), calc(13.13vw + 368px)"
-                        />
-                      </m.div>
+                      <Image
+                        src={feature.image || "/ordinacija-kalendar.png"}
+                        alt={feature.title}
+                        fill
+                        className="rounded-lg shadow-md  size-full object-cover object-left-top"
+                        sizes="(min-width: 1540px) 1003px, (min-width: 1280px) 832px, (min-width: 1120px) 677px, (min-width: 780px) calc(55.94vw + 63px), (min-width: 480px) calc(100vw - 32px), calc(13.13vw + 368px)"
+                      />
                     </m.div>
-                  )}
-                </AnimatePresence>
-              </TabPanel>
-            ))}
-          </div>
-        </Tabs>
-      </div>
-   
+                  </m.div>
+                )}
+              </AnimatePresence>
+            </TabPanel>
+          ))}
+        </div>
+      </Tabs>
+    </div>
   );
 };
 
