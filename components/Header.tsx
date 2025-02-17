@@ -5,6 +5,7 @@ import { m, useMotionValueEvent, useScroll } from "framer-motion";
 import Logo from "./Logo";
 import Button from "./shared/Button";
 import { useState } from "react";
+import LogoSmall from "./LogoSmall";
 
 
 export default function Header() {
@@ -18,10 +19,10 @@ export default function Header() {
   return (
     <header className="z-[999] relative w-full ">
       <m.nav
-        initial={{ y: -250, x: "-50%", opacity: 0 }}
-        animate={{ y: 2, x: "-50%", opacity: 1 }}
+        initial={{ y: -250, x:"-50%", opacity: 0 }}
+        animate={{ y: 2,x:"-50%",  opacity: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        className={`fixed  px-2 container xs:px-6 xs:top-2 xs:left-1/2 xs:rounded-full transition-all duration-300 ${
+        className={`fixed  px-2 container xs:px-6 top-2 left-1/2 rounded-full transition-all duration-300 ${
           scrolled
             ? "bg-white bg-opacity-80 backdrop-blur-[0.5rem] shadow-lg "
             : "bg-transparent shadow-none border-0"
@@ -37,11 +38,18 @@ export default function Header() {
             animate={{ scale: scrolled ? 0.8 : 1 }}
             transition={{ duration: 0.3 }}
           >
+            <div className="hidden sm:block">
+
             <Logo />
+            </div>
+            <div>
+
+            <LogoSmall width={60} className=" sm:hidden"/>
+            </div>
           </m.div>
 
           <div className="flex gap-4">
-            <Button className="w-full sm:w-fit">Aplikacija</Button>
+            <Button className="w-full px-2 sm:w-fit">Aplikacija</Button>
             <Button invert href="/kontakt" className="w-full sm:w-fit">
               Kontakt
             </Button>

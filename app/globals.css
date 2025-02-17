@@ -38,3 +38,11 @@
 .text-gradient-accent {
   @apply bg-gradient-to-tr from-[#24ae7c] via-[#1e9c6e] to-[#188a60] bg-clip-text text-transparent;
 }
+.bg-gradient-accent {
+  @apply bg-gradient-to-tr from-[#24ae7c] via-[#1e9c6e] to-[#188a60] ;
+}
+  
+
+
+
+

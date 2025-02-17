@@ -1,22 +1,31 @@
 "use client";
-import Image from "next/image";
+ import Image from "next/image";
 import RotatingText from "./ui/rotating-text";
 import { FadeIn, FadeInStagger } from "./shared/FadeIn";
 import Button from "./shared/Button";
-import { useSectionInView } from "@/lib/hooks";
+
+import dynamic from "next/dynamic";
 // import { useActiveSectionContext } from "@/context/active-section-context";
 
+const DynamicLottieComponent = dynamic(
+  () => import("@/components/shared/LottieComponent"),
+  {
+    ssr: false,
+    
+  }
+);
+
 export default function HeroSection() {
-  const { ref } = useSectionInView("Naslovna", 0.5);
-  // const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+ 
+
   return (
     <section
-      ref={ref}
-      id="naslovna"
-      className="min-h-screen pt-[10.5rem] w-full sm:pt-0 flex items-center justify-center relative bg-gradient-to-r from-white via-green-50 to-green-100 overflow-hidden"
+    
+      
+      className="min-h-screen pt-24 w-full flex items-center bg-gradient-to-r from-white via-green-50 to-green-100 justify-center relative  overflow-hidden"
     >
-      <FadeIn className="lg:container lg:mx-auto  px-4 py-12 md:py-24 relative z-10 ">
-        <div className="flex flex-col md:flex-row items-center">
+      <FadeIn className="lg:container lg:mx-auto bg-transparent  px-4 py-12 md:py-24 relative z-10 ">
+        <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-1/2 md:pr-8">
             <h1 className="text-4xl md:text-5xl font-bold text-primary my-4">
               <RotatingText
@@ -39,10 +48,9 @@ export default function HeroSection() {
                 OrdinacijaCMS
               </span>
             </p>
-            <Button className="text-lg ">Počnite danas</Button>
             <FadeInStagger>
               <ul className="space-y-2 mt-6  text-lg tracking-widest">
-                <li >
+                <li>
                   <FadeIn className="flex items-center">
                     <svg
                       className="w-5 h-5 text-green-500 mr-2"
@@ -61,8 +69,8 @@ export default function HeroSection() {
                     Jednostavno upravljanje pacijentima
                   </FadeIn>
                 </li>
-                  <li >
-                <FadeIn className="flex items-center">
+                <li>
+                  <FadeIn className="flex items-center">
                     <svg
                       className="w-5 h-5 text-green-500 mr-2"
                       fill="none"
@@ -78,9 +86,9 @@ export default function HeroSection() {
                       />
                     </svg>
                     Kalendar i zakazivanje pregleda
-                </FadeIn>
-                  </li>
-                  <li >
+                  </FadeIn>
+                </li>
+                <li>
                   <FadeIn className="flex items-center">
                     <svg
                       className="w-5 h-5 text-green-500 mr-2"
@@ -97,9 +105,9 @@ export default function HeroSection() {
                       />
                     </svg>
                     Kreiranje i spremanje nalaza i mišljenja
-                </FadeIn>
-                  </li>
-                  <li >
+                  </FadeIn>
+                </li>
+                <li>
                   <FadeIn className="flex items-center">
                     <svg
                       className="w-5 h-5 text-green-500 mr-2"
@@ -116,12 +124,16 @@ export default function HeroSection() {
                       />
                     </svg>
                     Kompletan prikaz pregleda na jednom mjestu
-                </FadeIn>
-                  </li>
+                  </FadeIn>
+                </li>
               </ul>
+            <FadeIn className="mt-6">
+              <Button className="text-lg ">Počnite danas</Button>
+             
+            </FadeIn>
             </FadeInStagger>
           </div>
-          <div className="md:w-1/2 mt-8 md:mt-0 relative z-10">
+          {/* <div className="md:w-1/2 mt-8 md:mt-0 relative z-10">
             <Image
               src="/ordinacija-kalendar.png"
               alt="Ordinacija CMS Dashboard"
@@ -130,9 +142,22 @@ export default function HeroSection() {
               priority
               className="rounded-lg shadow-xl"
             />
+          </div> */}
+          <div className="max-w-[700px] flex-1">
+            <DynamicLottieComponent path="/animations/hero-lottie.json" />
           </div>
         </div>
       </FadeIn>
+     <div className="absolute top-0 bottom-0 -right-0 w-1/2 min-h-[500px]">
+        <Image
+          src="/shape-green.png"
+          priority
+          fill
+          sizes="(min-width: 1900px) 58.91vw, (min-width: 1540px) calc(20.59vw + 724px), (min-width: 1280px) 957px, (min-width: 1120px) 857px, (min-width: 780px) calc(-42.5vw + 1325px), (min-width: 580px) calc(75.56vw + 783px), (min-width: 400px) calc(-98.75vw + 1197px), calc(-165vw + 1430px)"
+          className="object-cover  object-left-top size-full"
+          alt="shape"
+        />
+      </div> 
     </section>
   );
 }

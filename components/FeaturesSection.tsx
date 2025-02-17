@@ -1,27 +1,29 @@
-"use client";
-
-import { useSectionInView } from "@/lib/hooks";
 import AnimatedFeaturesTab from "./AnimatedFeaturesTabs";
+// import { FeaturesSectionCards } from "./FeaturesSmallCards";
 import { FadeIn, FadeInStagger } from "./shared/FadeIn";
+import PageIntro from "./shared/PageIntro";
 
 export default function FeaturesSection() {
-  const { ref } = useSectionInView("Pogodnosti");
-
   return (
-    <section ref={ref} id="pogodnosti" className="py-20 scroll-mt-48 md:py-28 md:scroll-mt-32">
-      <div className="lg:container lg:mx-auto">
-        <FadeInStagger>
-          <FadeIn>
-          <h2 className="text-3xl md:text-6xl leading-10 font-bold text-center mb-8 text-black">
-              Pogodnosti koje nudimo za Vašu praksu
-            </h2>
-            
-          </FadeIn>
-          <FadeIn className="mt-20">
-            <AnimatedFeaturesTab />
-          </FadeIn>
-        </FadeInStagger>
-      </div>
-    </section>
+    <>
+      <section className="py-20 relative md:py-28 ">
+       
+          {/* <FeaturesSectionCards /> */}
+        
+        <div className="lg:container lg:mx-auto">
+          <FadeInStagger>
+            <PageIntro
+              eyebrow="Pogodnosti"
+              title=" Mogućnosti koje Vam olakšavaju svakodnevni rad"
+              paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquam incidunt id facilis tempore consequuntur labore vel distinctio assumenda eos? Voluptas repellendus quibusdam laborum explicabo iste perspiciatis, eaque aperiam rem!"
+            />
+
+            <FadeIn className="mt-20">
+              <AnimatedFeaturesTab />
+            </FadeIn>
+          </FadeInStagger>
+        </div>
+      </section>
+    </>
   );
 }

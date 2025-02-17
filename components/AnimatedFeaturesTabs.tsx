@@ -117,13 +117,13 @@ const AnimatedFeaturesTab: React.FC = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="relative w-full min-h-[300px] lg:min-h-[500px]"
+                        className="relative w-full min-h-[300px] lg:min-h-[500px] "
                       >
                         <Image
                           src={feature.image || "/ordinacija-kalendar.png"}
                           alt={feature.title}
                           fill
-                          className="rounded-lg shadow-md  size-full object-cover object-left-top"
+                          className="rounded-lg shadow-md  size-full object-cover object-center-top"
                           sizes="(min-width: 1540px) 1003px, (min-width: 1280px) 832px, (min-width: 1120px) 677px, (min-width: 780px) calc(55.94vw + 63px), (min-width: 480px) calc(100vw - 32px), calc(13.13vw + 368px)"
                         />
                       </m.div>
