@@ -3,17 +3,18 @@
 import RotatingText from "./ui/rotating-text";
 import { FadeIn, FadeInStagger } from "./shared/FadeIn";
 import Button from "./shared/Button";
+import LottieComponent from "./shared/LottieComponent";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 // import { useActiveSectionContext } from "@/context/active-section-context";
 
-const DynamicLottieComponent = dynamic(
-  () => import("@/components/shared/LottieComponent"),
-  {
-    ssr: false,
+// const DynamicLottieComponent = dynamic(
+//   () => import("@/components/shared/LottieComponent"),
+//   {
+//     ssr: false,
     
-  }
-);
+//   }
+// );
 
 export default function HeroSection() {
  
@@ -144,7 +145,8 @@ export default function HeroSection() {
             />
           </div> */}
           <div className="max-w-[700px] flex-1">
-            <DynamicLottieComponent path="/animations/hero-lottie.json" />
+            {/* <DynamicLottieComponent path="/animations/hero-lottie.json" /> */}
+            <LottieComponent path="/animations/hero-lottie.json" />
           </div>
         </div>
       </FadeIn>
