@@ -119,7 +119,7 @@ export default function ContactForm() {
         <div className="isolate -space-y-px rounded-2xl bg-white/50">
           <TextInput
             {...register("name")}
-            label="Ime i prezime"
+            label="Ime i prezime*"
             placeholder="Ime i Prezime"
             name="name"
             autoComplete="name"
@@ -127,7 +127,7 @@ export default function ContactForm() {
           />
           <TextInput
             {...register("email")}
-            label="Email"
+            label="Email*"
             type="email"
             name="email"
             autoComplete="email"
@@ -144,7 +144,7 @@ export default function ContactForm() {
           />
           <TextareaInput
             {...register("message")}
-            label="Poruka"
+            label="Poruka*"
             name="message"
             errorMessage={errors.message?.message || ""}
           />

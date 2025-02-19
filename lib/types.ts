@@ -10,7 +10,6 @@ export const contactFormSchema = () =>
       name: z
         .string()
         .trim()
-        .min(1, { message: "Ovo polje je obavezno." })
         .max(100, { message: "Ime mora imati manje od 100 znakova." })
         .refine((value) => /^[a-zA-ZčćšđžČĆŠĐŽ\s]+$/.test(value), {
           message: "Vaše ime smije sadržavati samo slova.",
@@ -26,9 +25,11 @@ export const contactFormSchema = () =>
       phone: z
         .string()
         .trim()
-        .min(1, { message: "Ovo polje je obavezno." })
         .max(20, { message: "Telefonski broj mora imati manje od 20 znakova." })
-        .regex(/^[\d\s()+-]+$/, { message: "Nevažeći format telefonskog broja." }),
+        .optional()
+        .refine((value) => !value || /^[\d\s()+-]+$/.test(value), {
+          message: "Nevažeći format telefonskog broja",
+        }),
   
      
       message: z
