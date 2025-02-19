@@ -11,11 +11,11 @@ export default function Footer() {
   const path = usePathname();
   
   return (
-    <footer className={clsx("bg-slate-800 relative flex flex-col  px-4 py-10",`${path !== "/kontakt" && "min-h-[500px] md:min-h-[400px]"}`)}>
+    <footer className={clsx("bg-primary-accent relative flex flex-col  px-4 py-10",`${path !== "/kontakt" && "min-h-[500px] md:min-h-[400px]"}`)}>
       {/* Floating Contact Box */}
 
       {path !== "/kontakt" ? (
-        <div className="bg-gradient-accent absolute text-center py-[90px] -top-1/3 left-1/2 -translate-x-1/2 shadow-md rounded-lg text-white md:max-w-3xl w-full max-w-[90%] px-4 flex flex-col items-center justify-center mx-auto">
+        <div className="bg-gradient-accent absolute text-center py-[90px] -top-1/3 left-1/2  -translate-x-1/2 shadow-lg shadow-black/40  rounded-[20px] text-white md:max-w-3xl w-full max-w-[90%] px-4 flex flex-col items-center justify-center mx-auto overflow-hidden">
           <div className="max-w-xl mx-auto flex justify-center items-center flex-col px-2 gap-6">
             <h3 className="text-2xl sm:text-4xl font-semibold tracking-wider">
               Niste pronašli odgovor na pitanje koje vas zanima?

@@ -1,9 +1,11 @@
 "use client";
- import Image from "next/image";
+import Image from "next/image";
 import RotatingText from "./ui/rotating-text";
 import { FadeIn, FadeInStagger } from "./shared/FadeIn";
 import Button from "./shared/Button";
 import LottieComponent from "./shared/LottieComponent";
+import { useState } from "react";
+import VideoModal from "./shared/VideoModal";
 
 // import dynamic from "next/dynamic";
 // import { useActiveSectionContext } from "@/context/active-section-context";
@@ -12,19 +14,14 @@ import LottieComponent from "./shared/LottieComponent";
 //   () => import("@/components/shared/LottieComponent"),
 //   {
 //     ssr: false,
-    
+
 //   }
 // );
 
 export default function HeroSection() {
- 
-
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
-    <section
-    
-      
-      className="min-h-screen pt-24 w-full flex items-center bg-gradient-to-r from-white via-green-50 to-green-100 justify-center relative  overflow-hidden"
-    >
+    <section className="min-h-screen pt-24 w-full flex items-center bg-gradient-to-r from-white via-green-50 to-green-100 justify-center relative  overflow-hidden">
       <FadeIn className="lg:container lg:mx-auto bg-transparent  px-4 py-12 md:py-24 relative z-10 ">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-1/2 md:pr-8">
@@ -128,10 +125,15 @@ export default function HeroSection() {
                   </FadeIn>
                 </li>
               </ul>
-            <FadeIn className="mt-6">
-              <Button className="text-lg ">Počnite danas</Button>
-             
-            </FadeIn>
+              <FadeIn className="mt-6">
+                <Button className="text-lg ">Počnite danas</Button>
+                <button
+                  onClick={() => setModalOpen(true)}
+                  className="px-6 py-3 bg-white text-primary-accent font-semibold tracking-wide border border-primary rounded-[20px] shadow-lg hover:bg-primary-accent hover:text-white  transition"
+                >
+                  Pogledaj DEMO
+                </button>
+              </FadeIn>
             </FadeInStagger>
           </div>
           {/* <div className="md:w-1/2 mt-8 md:mt-0 relative z-10">
@@ -150,7 +152,7 @@ export default function HeroSection() {
           </div>
         </div>
       </FadeIn>
-     <div className="absolute top-0 bottom-0 -right-0 w-1/2 min-h-[500px]">
+      <div className="absolute top-0 bottom-0 -right-0 w-1/2 min-h-[500px]">
         <Image
           src="/shape-green.png"
           priority
@@ -159,7 +161,12 @@ export default function HeroSection() {
           className="object-cover  object-left-top size-full"
           alt="shape"
         />
-      </div> 
+      </div>
+      <VideoModal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        videoId="dQw4w9WgXcQ" // Replace with your YouTube video ID
+      />
     </section>
   );
 }

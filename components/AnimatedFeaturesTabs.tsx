@@ -94,7 +94,7 @@ const AnimatedFeaturesTab: React.FC = () => {
         <div className=" mt-8 md:mt-0 md:w-2/3 ">
          
           {features.map((feature, index) => (
-            <TabPanel  key={index}>
+            <TabPanel  key={index} className="">
               <AnimatePresence mode="wait">
                 {selectedTab === index && (
                   <m.div
@@ -102,7 +102,7 @@ const AnimatedFeaturesTab: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-gradient-to-r from-white via-green-50 to-green-100  rounded-lg shadow-lg  gap-8"
+                    className="bg-gradient-to-r from-white via-green-50 to-green-100 rounded-[20px] overflow-hidden shadow-xl  gap-8"
                   >
                     <div className="p-6">
                       <h3 className="text-2xl font-semibold mb-4 text-gradient-accent">
@@ -116,13 +116,13 @@ const AnimatedFeaturesTab: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5 }}
-                      className="relative w-full min-h-[300px] lg:min-h-[500px] "
+                      className="relative w-full min-h-[300px] lg:min-h-[500px] rounded-[20px] overflow-hidden"
                     >
                       <Image
                         src={feature.image || "/ordinacija-kalendar.png"}
                         alt={feature.title}
                         fill
-                        className="rounded-lg shadow-md  size-full object-cover object-left-top"
+                        className="rounded-[20px] shadow-md  size-full object-cover object-left-top"
                         sizes="(min-width: 1540px) 1003px, (min-width: 1280px) 832px, (min-width: 1120px) 677px, (min-width: 780px) calc(55.94vw + 63px), (min-width: 480px) calc(100vw - 32px), calc(13.13vw + 368px)"
                       />
                     </m.div>

@@ -78,7 +78,7 @@ export default function PricingSection() {
           </div>
 
           {/* Static Card Wrapper */}
-          <div className="bg-white mb-20 md:mb-32 p-8 rounded-lg min-w-[320px]  shadow-lg border border-gray-100 max-w-md w-full">
+          <div className="bg-white mb-20 md:mb-32 p-8 rounded-[20px] min-w-[320px]  shadow-lg border border-gray-100 max-w-md w-full">
             {/* Animate Name, Price, and Description Only */}
             <AnimatePresence mode="wait">
               <m.h3

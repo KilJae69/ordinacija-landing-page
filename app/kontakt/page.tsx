@@ -1,8 +1,32 @@
 import ContactForm from "@/components/ContactForm";
 import { FadeIn } from "@/components/shared/FadeIn";
 import PageIntro from "@/components/shared/PageIntro";
+import { Metadata } from "next";
 import Image from "next/image";
 import { Toaster } from "react-hot-toast";
+
+export const metadata: Metadata = {
+  title: "OrdinacijaCMS | Kontakt",
+  description:
+    "Kontaktirajte nas za sva pitanja o OrdinacijaCMS platformi. Tu smo da vam pomognemo sa upravljanjem pacijentima, zakazivanjem termina i medicinskom dokumentacijom.",
+  openGraph: {
+    title: "OrdinacijaCMS | Kontakt",
+    description:
+      "Imate pitanja o OrdinacijaCMS platformi? Kontaktirajte nas putem e-maila i saznajte više o digitalnom upravljanju medicinskom praksom.",
+    url: "https://ordinacijacms.com/kontakt",
+    siteName: "OrdinacijaCMS",
+    images: [
+      {
+        url: "/ordinacija-og.png", // Postavi tačan URL do slike
+        width: 1200,
+        height: 630,
+        alt: "OrdinacijaCMS - SaaS platforma za medicinske prakse",
+      },
+    ],
+    type: "website",
+  },
+};
+
 
 export default function ContactPage() {
   return (
