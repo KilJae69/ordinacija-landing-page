@@ -72,17 +72,17 @@ export default function FeatureCards() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12">
-        <FadeInStagger>
+    <div className=" mx-auto px-4">
+        
 
         
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1100px] mx-auto">
+      <FadeInStagger className="grid w-full grid-cols-1 md:grid-cols-2 gap-6 max-w-[1100px] mx-auto">
         {features.map((feature, index) => (
         
                 
           <FadeIn
             key={index}
-            className={`relative card-wrapper p-[3px] shadow-xl bg-white -z-10 overflow-hidden max-w-[500px] mx-auto w-full bg-gradient-to-br ${feature.gradient} ${feature.shape}`}
+            className={`relative card-wrapper p-[3px] shadow-xl bg-white -z-10 overflow-hidden max-w-[500px] mx-auto w-full bg-gradient-to-br ${feature.gradient} `}
             style={{
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 ["--conic-gradient" as any]: feature.conicGradient, // Fix TypeScript error
@@ -123,8 +123,8 @@ export default function FeatureCards() {
           </FadeIn>
                    
         ))}
-      </div>
       </FadeInStagger>
+     
     </div>
   );
 }

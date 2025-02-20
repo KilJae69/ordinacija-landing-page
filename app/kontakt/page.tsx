@@ -27,10 +27,9 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function ContactPage() {
   return (
-    <section className="relative flex-1 size-full bg-gradient-to-r pb-52 from-white via-green-50 to-green-100  pt-52">
+    <section className="relative flex-1 size-full bg-gradient-to-r pb-24 from-white via-green-50 to-green-100  pt-52">
       <PageIntro
         eyebrow="Kontakt"
         title="Za sva pitanja tu smo za Vas"
@@ -39,20 +38,21 @@ export default function ContactPage() {
           assumenda eos? Voluptas repellendus quibusdam laborum explicabo iste
           perspiciatis, eaque aperiam rem!"
       />
-      <FadeIn className="max-w-2xl mx-auto mt-52 relative px-4">
-        <div className="absolute -left-10 -top-[230px] size-full pointer-events-none z-10">
+      <FadeIn className="max-w-2xl mx-auto mt-32 sm:mt-52 relative px-4">
+        <div className="absolute w-[300px] h-[300px] -top-[140px] sm:w-[500px] sm:h-[500px] sm:-top-[238px]">
           <Image
-            className=" relative object-contain"
+            className="isolate z-10 pointer-events-none  object-contain "
             src="/form-doctor.png"
             fill
             alt="doctor"
           />
         </div>
+
         <div className="-z-10">
           <ContactForm />
         </div>
       </FadeIn>
-      <Toaster/>
+      <Toaster />
     </section>
   );
 }

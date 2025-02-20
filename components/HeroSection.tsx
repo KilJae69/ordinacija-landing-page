@@ -38,7 +38,7 @@ export default function HeroSection() {
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 rotationInterval={2000}
               /> */}
-             Jednostavno rješenje za privatne prakse
+              Jednostavno rješenje za privatne prakse
             </h1>
             <p className="text-xl text-gray-600 mb-6">
               Pojednostavite i ubrzajte rad Vaše prakse sa{" "}
@@ -125,15 +125,21 @@ export default function HeroSection() {
                   </FadeIn>
                 </li>
               </ul>
-              <FadeIn className="mt-6 flex flex-col sm:flex-row gap-4">
-                <Button className="text-lg" href="">Počnite danas</Button>
-                <Button
-                invert
-                  onClick={() => setModalOpen(true)}
-                  // className="px-6 py-3 bg-white text-primary-accent font-semibold tracking-wide border border-primary rounded-[20px] shadow-lg hover:bg-primary-accent hover:text-white  transition"
-                >
-                  Pogledaj DEMO
+              <FadeIn className="mt-6 flex flex-col  sm:flex-row gap-8 mb-8 sm:mb-0">
+                <Button className="text-lg" href="">
+                  Počnite danas
                 </Button>
+                <button
+                  onClick={() => setModalOpen(true)}
+                  className="flex group relative self-center items-center sm:self-auto gap-2 text-slate-800 font-semibold"
+                >
+                  <span className="mr-[60px] whitespace-nowrap transition-all group-hover:scale-[1.05]">
+                    Pogledaj DEMO
+                  </span>
+                  <span className="video-play-button">
+                    <span></span>
+                  </span>
+                </button>
               </FadeIn>
             </FadeInStagger>
           </div>

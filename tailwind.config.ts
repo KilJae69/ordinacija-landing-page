@@ -68,7 +68,7 @@ export default {
         },
       },
       animation: {
-        "border-spin": "border-spin 7s linear infinite",
+        "border-spin": "border-spin 15s linear infinite",
         shimmer: "shimmer 2s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

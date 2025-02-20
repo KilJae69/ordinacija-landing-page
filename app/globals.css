@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 .no-visible-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .no-visible-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
 
-  /* width */
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -33,15 +33,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-  
 
 .text-gradient-accent {
   @apply bg-gradient-to-tr from-[#24ae7c] via-[#1e9c6e] to-[#188a60] bg-clip-text text-transparent;
 }
 .bg-gradient-accent {
-  @apply bg-gradient-to-tr from-[#4fcfa0] via-[#21b17c] to-[#188a60] ;
+  @apply bg-gradient-to-tr from-[#4fcfa0] via-[#21b17c] to-[#188a60];
 }
-  
+
 @layer utilities {
   /* Act as a border */
   .card-wrapper {
@@ -51,7 +50,6 @@
   /* Gradient */
   .card-wrapper::before {
     background: var(--conic-gradient); /* Use the injected gradient */
-    
 
     @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''];
   }
@@ -62,5 +60,73 @@
   }
 }
 
+/* Video play button*/
 
+.video-play-button {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  box-sizing: content-box;
+  display: block;
+  width: 32px;
+  height: 44px;
+  /* background: #eb2055; */
+  border-radius: 50%;
+  
+}
 
+.video-play-button:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 35px;
+  height: 35px;
+  background: #eb2055;
+  border-radius: 50%;
+  animation: pulse-border 1100ms ease-out infinite;
+}
+
+.video-play-button:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #eb2055;
+  border-radius: 50%;
+  transition: all 200ms;
+}
+
+.video-play-button span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 15px solid #fff;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  top: 14px;
+  left: 10px;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}

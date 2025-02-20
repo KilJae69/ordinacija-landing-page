@@ -36,7 +36,7 @@ export default function Button({
       <button
         onClick={onClick}
         className={clsx(
-          "inline-flex h-12 animate-shimmer shadow-md hover:shadow-xl hover:scale-105 transition items-center justify-center rounded-3xl border  font-medium  focus:outline-none",
+          "inline-flex h-12 animate-shimmer shadow-md hover:shadow-xl hover:scale-105 transition items-center justify-center rounded-3xl border  font-medium  focus:outline-none whitespace-nowrap",
           invert
             ? "border-primary-accent  text-primary-accent bg-[linear-gradient(110deg,#fff,45%,#e0f2e9,55%,#fff)]"
             : "border-white text-white bg-[linear-gradient(110deg,#24ae7c,45%,#34d399,55%,#24ae7c)]",

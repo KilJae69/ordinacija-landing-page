@@ -9,7 +9,7 @@ import PageIntro from "./shared/PageIntro";
 export default function FeaturesSection() {
   return (
     <>
-      <section className="py-20 relative md:py-28 ">
+      <section className="py-20 relative ">
         {/* <FeaturesSectionCards /> */}
         {/* <Image src="/medical-bg.jpg" alt="bg" fill className="relative object-cover -z-10 opacity-20"/> */}
 
@@ -21,7 +21,7 @@ export default function FeaturesSection() {
               paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquam incidunt id facilis tempore consequuntur labore vel distinctio assumenda eos? Voluptas repellendus quibusdam laborum explicabo iste perspiciatis, eaque aperiam rem!"
             />
 
-            <FadeIn className="mt-20">
+            <FadeIn className="mt-10">
               {/* <AnimatedFeaturesTab /> */}
               <FeatureCards />
              
