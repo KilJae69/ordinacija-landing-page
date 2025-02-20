@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import RotatingText from "./ui/rotating-text";
+// import RotatingText from "./ui/rotating-text";
 import { FadeIn, FadeInStagger } from "./shared/FadeIn";
 import Button from "./shared/Button";
 import LottieComponent from "./shared/LottieComponent";
@@ -26,7 +26,7 @@ export default function HeroSection() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="w-full md:w-1/2 md:pr-8">
             <h1 className="text-4xl md:text-5xl font-bold text-primary my-4">
-              <RotatingText
+              {/* <RotatingText
                 texts={["Moderno", "Efikasno", "Isplativo"]}
                 mainClassName="px-2 min-w-[190px] sm:min-w-[245px] md:px-3 bg-[#24ae7c] w-fit mb-4 text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                 staggerFrom={"last"}
@@ -37,8 +37,8 @@ export default function HeroSection() {
                 splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 rotationInterval={2000}
-              />
-              rješenje za privatne prakse
+              /> */}
+             Jednostavno rješenje za privatne prakse
             </h1>
             <p className="text-xl text-gray-600 mb-6">
               Pojednostavite i ubrzajte rad Vaše prakse sa{" "}
@@ -125,14 +125,15 @@ export default function HeroSection() {
                   </FadeIn>
                 </li>
               </ul>
-              <FadeIn className="mt-6">
-                <Button className="text-lg ">Počnite danas</Button>
-                <button
+              <FadeIn className="mt-6 flex flex-col sm:flex-row gap-4">
+                <Button className="text-lg" href="">Počnite danas</Button>
+                <Button
+                invert
                   onClick={() => setModalOpen(true)}
-                  className="px-6 py-3 bg-white text-primary-accent font-semibold tracking-wide border border-primary rounded-[20px] shadow-lg hover:bg-primary-accent hover:text-white  transition"
+                  // className="px-6 py-3 bg-white text-primary-accent font-semibold tracking-wide border border-primary rounded-[20px] shadow-lg hover:bg-primary-accent hover:text-white  transition"
                 >
                   Pogledaj DEMO
-                </button>
+                </Button>
               </FadeIn>
             </FadeInStagger>
           </div>
