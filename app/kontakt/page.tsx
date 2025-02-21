@@ -32,11 +32,8 @@ export default function ContactPage() {
     <section className="relative flex-1 size-full bg-gradient-to-r pb-24 from-white via-green-50 to-green-100  pt-52">
       <PageIntro
         eyebrow="Kontakt"
-        title="Za sva pitanja tu smo za Vas"
-        paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquam
-          incidunt id facilis tempore consequuntur labore vel distinctio
-          assumenda eos? Voluptas repellendus quibusdam laborum explicabo iste
-          perspiciatis, eaque aperiam rem!"
+        title="Kontaktirajte nas – tu smo da vam pomognemo"
+        paragraph="Bilo da imate pitanja o funkcionalnostima, cijenama ili tehničkoj podršci – tu smo da vam pomognemo!"
       />
       <FadeIn className="max-w-2xl mx-auto mt-32 sm:mt-52 relative px-4">
         <div className="absolute w-[300px] h-[300px] -top-[140px] sm:w-[500px] sm:h-[500px] sm:-top-[238px]">

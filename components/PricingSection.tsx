@@ -18,7 +18,7 @@ export default function PricingSection() {
           "Naplaćuje se godišnje. Uštedite 25% u poređenju sa mjesečnim planom.",
         cta: "Počnite besplatno",
         features: [
-          "14 dana besplatno",
+          "30 dana besplatno",
           "Pristup svim mogućnostima",
           "24/7 podrška",
           "Bez dodatnih naplata",
@@ -30,7 +30,7 @@ export default function PricingSection() {
         description: "Naplaćuje se mjesečno. Prekinite u svakom trenutku.",
         cta: "Počnite besplatno",
         features: [
-          "14 dana besplatno",
+          "30 dana besplatno",
           "Pristup svim mogućnostima",
           "24/7 podrška",
           "Bez dodatnih naplata",
@@ -48,7 +48,7 @@ export default function PricingSection() {
           Izaberite Vaš plan
         </h2>
         <p className="text-center text-lg text-gray-600 mb-12">
-          Počnite sa 14 dana besplatno i uvjerite se da je{" "}
+          Počnite sa 30 dana besplatno i uvjerite se da je{" "}
           <span className="text-gradient-accent font-semibold">
             OrdinacijaCMS
           </span>{" "}
@@ -62,7 +62,7 @@ export default function PricingSection() {
             checked={isYearly}
             onCheckedChange={() => setIsYearly(!isYearly)}
           />
-          <span className="text-gray-600">Godišnje (-20%)</span>
+          <span className="text-gray-600">Godišnje (-25%)</span>
         </div>
 
         {/* Single Pricing Card with Inner Animation */}

@@ -9,7 +9,7 @@ export default function PrivacyPage() {
         eyebrow="Politika privatnosti"
         title="Politika privatnosti OrdinacijaCMS"
       />
-      <FadeIn className="max-w-2xl mx-auto space-y-6">
+      <FadeIn className="px-4 max-w-2xl mx-auto space-y-6">
         <section>
           <h2 className="font-semibold text-lg text-black dark:text-white mb-2">
             1. Uvod
@@ -101,12 +101,12 @@ export default function PrivacyPage() {
             8. Kontakt informacije
           </h2>
           <p>
-            Za sva pitanja vezana za zaštitu privatnosti ili zahtjeve u vezi s podacima, možete nas kontaktirati putem{" "}
+            Za sva pitanja vezana za zaštitu privatnosti ili zahtjeve u vezi s podacima, možete nas kontaktirati putem emaila,{" "}
             <a
               href="mailto:info@spark-dev-studio.com"
               className="text-primary-accent"
             >
-              emaila
+              info@spark-dev-studio.com
             </a>
             .
           </p>

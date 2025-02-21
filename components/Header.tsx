@@ -49,8 +49,8 @@ export default function Header() {
           </m.div>
 
           <div className="flex gap-4">
-            <Button className="w-full px-2 sm:w-fit">Aplikacija</Button>
-            <Button invert href="/kontakt" className="w-full sm:w-fit">
+            <Button className=" px-2 ">Aplikacija</Button>
+            <Button invert href="/kontakt" className="">
               Kontakt
             </Button>
           </div>

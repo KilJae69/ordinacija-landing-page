@@ -15,11 +15,8 @@ export default function FAQSection() {
     <section className=" pt-20 pb-52">
       <PageIntro
         eyebrow="Pitanja"
-        title="Imate pitanja?"
-        paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-            aliquam incidunt id facilis tempore consequuntur labore vel
-            distinctio assumenda eos? Voluptas repellendus quibusdam laborum
-            explicabo iste perspiciatis, eaque aperiam rem!"
+        title="Česta pitanja – Sve što trebate znati o OrdinacijaCMS-u"
+        paragraph="Imate pitanja o našem sistemu? Ovdje ćete pronaći odgovore na najčešće postavljana pitanja. Ako ne pronađete ono što vas zanima, slobodno nas kontaktirajte!"
       />
      
 
@@ -30,7 +27,7 @@ export default function FAQSection() {
               <AccordionTrigger className=" sm:text-xl">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
+              <AccordionContent className=" sm:text-lg text-justify italic">{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

@@ -15,7 +15,7 @@ export default function FeatureCards() {
     {
       title: "Upravljanje pacijentima 🏥",
       description:
-        "Sigurno upravljajte i pristupajte podacima pacijenata pomoću intuitivnog i jednostavnog digitalnog sistema.",
+        "Brzo pristupite kartonima pacijenata, evidentirajte preglede i upravljajte terapijama – sve unutar sigurnog i organiziranog sistema.",
       icon: ClipboardList,
       iconColor: "text-blue-600",
       gradient: "from-blue-50 to-blue-100",
@@ -29,7 +29,7 @@ export default function FeatureCards() {
     {
       title: "Interaktivni kalendar 📅",
       description:
-        "Efikasno organizujte termine i upravljajte rasporedom vaše klinike u stvarnom vremenu.",
+        "Zakažite, organizirajte i pratite termine bez grešaka. Kalendar se automatski ažurira, olakšavajući koordinaciju i upravljanje rasporedom.",
       icon: Calendar,
       iconColor: "text-green-600",
       gradient: "from-green-50 to-green-100",
@@ -43,7 +43,7 @@ export default function FeatureCards() {
     {
       title: "Historija posjeta ⏳",
       description:
-        "Pratite i analizirajte historiju pregleda pacijenata kroz individualni pregled za svakog pacijenta.",
+        "Detaljan pregled svih prethodnih posjeta, terapija i dijagnoza za svakog pacijenta – uvijek dostupno kad vam zatreba.",
       icon: Clock,
       iconColor: "text-purple-600",
       gradient: "from-purple-50 to-purple-100",
@@ -57,7 +57,7 @@ export default function FeatureCards() {
     {
       title: "Sigurno čuvanje podataka 🔐",
       description:
-        "Svi podaci vaše klinike su sigurno pohranjeni u oblaku i mogu se lako oporaviti u slučaju gubitka ili oštećenja.",
+        "Vaši podaci su uvijek sigurni. Automatske sigurnosne kopije i enkripcija osiguravaju zaštitu i pouzdanost.",
       icon: CloudUpload,
       iconColor: "text-orange-600",
       gradient: "from-orange-50 to-orange-100",

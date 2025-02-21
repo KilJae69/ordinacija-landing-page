@@ -17,8 +17,8 @@ export default function FeaturesSection() {
           <FadeInStagger>
             <PageIntro
               eyebrow="Pogodnosti"
-              title=" Mogućnosti koje Vam olakšavaju svakodnevni rad"
-              paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquam incidunt id facilis tempore consequuntur labore vel distinctio assumenda eos? Voluptas repellendus quibusdam laborum explicabo iste perspiciatis, eaque aperiam rem!"
+              title=" Sve što vam treba za organiziran i siguran rad"
+              paragraph="OrdinacijaCMS je dizajniran da pojednostavi administrativne procese vaše klinike. Brže upravljajte pacijentima, terminima i medicinskim podacima – sve na jednom sigurnom mjestu."
             />
 
             <FadeIn className="mt-10">

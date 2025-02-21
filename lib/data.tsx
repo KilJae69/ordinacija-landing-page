@@ -21,46 +21,51 @@ export const links = [
 
  export const faqs = [
     {
-      question: "What is Ordinacija CMS?",
+      question: "Šta je Ordinacija CMS?",
       answer:
-        "Ordinacija CMS is a comprehensive Content Management System designed specifically for medical practices in Bosnia. It helps streamline patient management, appointment scheduling, and billing processes.",
+        "OrdinacijaCMS je napredan, ali jednostavan sistem za upravljanje privatnim ordinacijama i klinikama. Pruža vam alate za vođenje medicinske dokumentacije, upravljanje pacijentima, zakazivanje pregleda i sigurno pohranjivanje podataka. Dizajniran je tako da smanji administrativne zadatke i poboljša produktivnost medicinskog osoblja, omogućavajući im da se fokusiraju na pacijente.",
     },
     {
-      question: "How long is the free trial period?",
+      question: "Koliko dugo traje probni period?",
       answer:
-        "We offer a 14-day free trial period for Ordinacija CMS. During this time, you can explore all features and functionalities without any commitment.",
+        "OrdinacijaCMS nudi 30 dana besplatnog probnog perioda bez ikakvih obaveza. Tokom ovog perioda imate pristup svim funkcionalnostima aplikacije kako biste testirali njene mogućnosti i procijenili koliko vam može olakšati rad. Nakon isteka probnog perioda, možete se odlučiti za nastavak korištenja kroz jedan od dostupnih planova pretplate.",
     },
     {
-      question: "Can I cancel my subscription at any time?",
-      answer: "Yes, you can cancel your subscription at any time. There are no long-term contracts or cancellation fees.",
+      question: "Da li mogu otkazati svoju pretplatu u svakom trenutku?",
+      answer: "Da, možete otkazati svoju pretplatu u bilo kojem trenutku, bez dodatnih troškova. Nakon otkazivanja, vaš pristup aplikaciji će ostati aktivan do kraja vašeg trenutnog plaćenog perioda. Nakon toga, aplikacija će biti zaključana, ali podaci će biti sačuvani u slučaju da želite ponovo aktivirati uslugu.",
     },
     {
-      question: "Is my data secure with Ordinacija CMS?",
+      question: "da li su moji podaci sigurno sa Ordinacija CMS?",
       answer:
-        "Absolutely. We prioritize the security and privacy of your data. Ordinacija CMS uses state-of-the-art encryption and follows all relevant data protection regulations.",
+        "Apsolutno! Sigurnost vaših podataka je naš prioritet. OrdinacijaCMS koristi napredne metode enkripcije kako bi zaštitio sve medicinske i poslovne informacije. Svi podaci su sigurno pohranjeni na serverima sa redovnim sigurnosnim backup-ima, osiguravajući da nikada ne izgubite važne informacije. ",
     },
     {
-      question: "Do you offer customer support?",
+      question: "Do li nudite korisničku podršku?",
       answer:
-        "Yes, we provide customer support via email for all our users. Additionally, yearly subscribers get priority support.",
+        "Naravno! Naš tim korisničke podrške je tu da vam pomogne sa svim pitanjima i tehničkim problemima. Možete nas kontaktirati putem e-maila ili chata, a naš stručni tim će vam se javiti u najkraćem mogućem roku. Naša podrška je dostupna 24/7",
     },
     {
-      question: "Can I import my existing patient data?",
+      question: "Koristim vašu aplikaciju neko vrijeme i imam puno podataka. Kako mogu sačuvati svoje podatke ako odlučim prestati koristiti aplikaciju?",
       answer:
-        "Yes, Ordinacija CMS supports data import from various formats. Our support team can assist you with the data migration process.",
+        "OrdinacijaCMS vam omogućava da izvezete sve svoje podatke u CSV  format kako biste ih mogli sačuvati ili koristiti u drugom sistemu. Naša opcija sigurnosnog izvoza osigurava da vaši podaci o pacijentima budu dostupni van aplikacije kada vam zatrebaju. Također, ako planirate pauzirati korištenje, vaši podaci će biti sigurno pohranjeni na određeni period, tako da ih možete ponovo aktivirati kada budete spremni.",
     },
     {
-      question: "My question is not answered here?",
+      question: "Da li je ovo sve što OrdinacijaCMS nudi ili planirate dalji razvoj?",
+      answer:
+        "Ne, OrdinacijaCMS se stalno razvija! Aktivno slušamo naše korisnike i redovno dodajemo nove funkcionalnosti na osnovu njihovih potreba. Naš cilj je da aplikacija postane još moćniji alat za upravljanje ordinacijama, uz što jednostavnije korisničko iskustvo. Ako imate prijedloge za nove funkcionalnosti, slobodno nam ih pošaljite – vaša povratna informacija nam pomaže da unaprijedimo OrdinacijaCMS prema stvarnim potrebama zdravstvenih profesionalaca.",
+    },
+    {
+      question: "Moje pitanje nije odgovoreno?",
       answer:  (
         <>
-          Go ahead and contact us at{" "}
+          Ako niste pronašli odgovor na svoje pitanje, ne brinite! Naš tim vam je na raspolaganju. Možete nam se obratiti putem kontakt forme na web stranici ili nam direktno poslati e-mail na {" "}
           <a
-            href="mailto:spark.studio.dev@gmail.com"
+            href="mailto:info@spark-dev-studio.com"
             className="text-primary-accent hover:underline"
           >
-            spark.studio.dev@gmail.com
+            info@spark-dev-studio.com
           </a>{" "}
-          and we will answer any question you might have about the platform or our team!
+          Tu smo da vam pomognemo!
         </>
       ),
     },
