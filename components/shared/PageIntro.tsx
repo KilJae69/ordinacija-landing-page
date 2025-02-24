@@ -14,7 +14,7 @@ export default function PageIntro({
   page = false,
 }: PageIntroProps) {
   return (
-    <FadeIn className="container flex flex-col mx-auto px-4">
+    <FadeIn className="container flex max-w-4xl flex-col mx-auto px-4">
       <span className="mx-auto mb-4 tracking-widest font-semibold text-primary-accent bg-primary-accent/20 rounded-3xl px-2 py-1">
         {eyebrow}
       </span>
