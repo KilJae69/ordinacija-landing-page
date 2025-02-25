@@ -49,7 +49,7 @@ export default function Header() {
           </m.div>
 
           <div className="flex gap-4">
-            <Button className=" px-2 ">Aplikacija</Button>
+            <Button href="https://app.ordinacijacms.com" className=" px-2 ">Aplikacija</Button>
             <Button invert href="/kontakt" className="">
               Kontakt
             </Button>

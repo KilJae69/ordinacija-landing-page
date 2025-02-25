@@ -145,7 +145,7 @@ export default function PricingSection() {
               ))}
             </ul>
 
-            <Button className="w-full">{pricingPlan.cta}</Button>
+            <Button href="https://app.ordinacijacms.com" className="w-full">{pricingPlan.cta}</Button>
           </div>
 
           <div className="relative w-full hidden lg:block">

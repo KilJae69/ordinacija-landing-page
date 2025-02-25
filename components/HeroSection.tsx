@@ -126,7 +126,7 @@ export default function HeroSection() {
                 </li>
               </ul>
               <FadeIn className="mt-6 flex flex-col  sm:flex-row gap-8 mb-8 sm:mb-0">
-                <Button className="text-lg" href="">
+                <Button className="text-lg" href="https://app.ordinacijacms.com">
                   Počnite danas
                 </Button>
                 {/* <button
