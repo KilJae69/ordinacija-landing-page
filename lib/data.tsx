@@ -35,14 +35,14 @@ export const links = [
       answer: "Da, možete otkazati svoju pretplatu u bilo kojem trenutku, bez dodatnih troškova. Nakon otkazivanja, vaš pristup aplikaciji će ostati aktivan do kraja vašeg trenutnog plaćenog perioda. Nakon toga, aplikacija će biti zaključana, ali podaci će biti sačuvani u slučaju da želite ponovo aktivirati uslugu.",
     },
     {
-      question: "da li su moji podaci sigurno sa Ordinacija CMS?",
+      question: "Da li su moji podaci sigurno sa Ordinacija CMS?",
       answer:
         "Apsolutno! Sigurnost vaših podataka je naš prioritet. OrdinacijaCMS koristi napredne metode enkripcije kako bi zaštitio sve medicinske i poslovne informacije. Svi podaci su sigurno pohranjeni na serverima sa redovnim sigurnosnim backup-ima, osiguravajući da nikada ne izgubite važne informacije. ",
     },
     {
-      question: "Do li nudite korisničku podršku?",
+      question: "Da li nudite korisničku podršku?",
       answer:
-        "Naravno! Naš tim korisničke podrške je tu da vam pomogne sa svim pitanjima i tehničkim problemima. Možete nas kontaktirati putem e-maila ili chata, a naš stručni tim će vam se javiti u najkraćem mogućem roku. Naša podrška je dostupna 24/7",
+        "Naravno! Naš tim korisničke podrške je tu da vam pomogne sa svim pitanjima i tehničkim problemima. Možete nas kontaktirati putem e-maila, a naš stručni tim će vam se javiti u najkraćem mogućem roku. Naša podrška je dostupna 24/7",
     },
     {
       question: "Koristim vašu aplikaciju neko vrijeme i imam puno podataka. Kako mogu sačuvati svoje podatke ako odlučim prestati koristiti aplikaciju?",
