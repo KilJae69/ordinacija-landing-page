@@ -4,8 +4,8 @@ import Image from "next/image";
 import { FadeIn, FadeInStagger } from "./shared/FadeIn";
 import Button from "./shared/Button";
 import LottieComponent from "./shared/LottieComponent";
-// import { useState } from "react";
-// import VideoModal from "./shared/VideoModal";
+ import { useState } from "react";
+ import VideoModal from "./shared/VideoModal";
 
 // import dynamic from "next/dynamic";
 // import { useActiveSectionContext } from "@/context/active-section-context";
@@ -19,7 +19,7 @@ import LottieComponent from "./shared/LottieComponent";
 // );
 
 export default function HeroSection() {
- // const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
     <section className="min-h-screen pt-24 w-full flex items-center bg-gradient-to-r from-white via-green-50 to-green-100 justify-center relative  overflow-hidden">
       <FadeIn className="lg:container lg:mx-auto bg-transparent  px-4 py-12 md:py-24 relative z-10 ">
@@ -129,7 +129,7 @@ export default function HeroSection() {
                 <Button className="text-lg" href="https://app.ordinacijacms.com">
                   Počnite danas
                 </Button>
-                {/* <button
+             <button
                   onClick={() => setModalOpen(true)}
                   className="flex group relative  self-center items-center sm:self-auto gap-2 text-slate-800 font-semibold"
                 >
@@ -139,7 +139,7 @@ export default function HeroSection() {
                   <span className="video-play-button">
                     <span></span>
                   </span>
-                </button> */}
+                </button> 
               </FadeIn>
             </FadeInStagger>
           </div>
@@ -169,11 +169,11 @@ export default function HeroSection() {
           alt="shape"
         />
       </div>
-      {/* <VideoModal
+     <VideoModal
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
-        videoId="dQw4w9WgXcQ" // Replace with your YouTube video ID
-      /> */}
+        videoId="AhnFKu75mgk" // Replace with your YouTube video ID
+      /> 
     </section>
   );
 }
