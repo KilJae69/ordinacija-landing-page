@@ -144,12 +144,7 @@ export default function HeroSection() {
                 <button
                   onClick={() => {
                     setModalOpen(true);
-                    sendGAEvent({
-                      event: "demo_video_click",
-                      category: "engagement",
-                      label: "Open Demo Video",
-                      value: 1,
-                    });
+                    sendGAEvent('event', 'buttonClicked', { value: 'xyz' })
                   }}
                   className="flex group relative  self-center items-center sm:self-auto gap-2 text-slate-800 font-semibold"
                 >
