@@ -6,6 +6,7 @@ import Button from "@/components/shared/Button";
 import { Switch } from "./shared/Switch";
 import { FadeIn } from "./shared/FadeIn";
 import Image from "next/image";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(true);
@@ -38,12 +39,11 @@ export default function PricingSection() {
       };
 
   return (
-    <section
-      
-      className="pt-20 scroll-mt-24 bg-gradient-to-r from-white via-green-50 to-green-100"
-    >
+    <section className="pt-20 scroll-mt-24 bg-gradient-to-r from-white via-green-50 to-green-100">
       <FadeIn className="container flex flex-col mx-auto px-4">
-        <span className="mx-auto mb-4 tracking-widest font-semibold text-primary-accent bg-primary-accent/20 rounded-3xl px-2 py-1">Cjenovnik</span>
+        <span className="mx-auto mb-4 tracking-widest font-semibold text-primary-accent bg-primary-accent/20 rounded-3xl px-2 py-1">
+          Cjenovnik
+        </span>
         <h2 className="text-3xl md:text-4xl leading-10 font-bold text-center mb-8 text-black">
           Izaberite Vaš plan
         </h2>
@@ -145,12 +145,25 @@ export default function PricingSection() {
               ))}
             </ul>
 
-            <Button href="https://app.ordinacijacms.com" className="w-full">{pricingPlan.cta}</Button>
+            <Button
+              onClick={() => {
+                sendGAEvent({
+                  event: "pricing_cta_clicked",
+                  category: "engagement",
+                  label: "Pricing Section",
+                  value: 1,
+                });
+              }}
+              href="https://app.ordinacijacms.com"
+              className="w-full"
+            >
+              {pricingPlan.cta}
+            </Button>
           </div>
 
           <div className="relative w-full hidden lg:block">
             <Image
-             sizes="590px"
+              sizes="590px"
               src="/ai-female-doctor.png"
               fill
               alt="muški avatar doktora"

@@ -4,8 +4,9 @@ import Image from "next/image";
 import { FadeIn, FadeInStagger } from "./shared/FadeIn";
 import Button from "./shared/Button";
 import LottieComponent from "./shared/LottieComponent";
- import { useState } from "react";
- import VideoModal from "./shared/VideoModal";
+import { useState } from "react";
+import VideoModal from "./shared/VideoModal";
+import { sendGAEvent } from "@next/third-parties/google";
 
 // import dynamic from "next/dynamic";
 // import { useActiveSectionContext } from "@/context/active-section-context";
@@ -126,11 +127,30 @@ export default function HeroSection() {
                 </li>
               </ul>
               <FadeIn className="mt-6 flex flex-col  sm:flex-row gap-8 mb-8 sm:mb-0">
-                <Button className="text-lg" href="https://app.ordinacijacms.com">
+                <Button
+                  onClick={() =>
+                    sendGAEvent({
+                      event: "app_button_click",
+                      category: "engagement",
+                      label: "Start Today",
+                      value: 1,
+                    })
+                  }
+                  className="text-lg"
+                  href="https://app.ordinacijacms.com"
+                >
                   Počnite danas
                 </Button>
-             <button
-                  onClick={() => setModalOpen(true)}
+                <button
+                  onClick={() => {
+                    setModalOpen(true);
+                    sendGAEvent({
+                      event: "demo_video_click",
+                      category: "engagement",
+                      label: "Open Demo Video",
+                      value: 1,
+                    });
+                  }}
                   className="flex group relative  self-center items-center sm:self-auto gap-2 text-slate-800 font-semibold"
                 >
                   <span className="mr-[60px] whitespace-nowrap transition-all group-hover:scale-[1.05]">
@@ -139,7 +159,7 @@ export default function HeroSection() {
                   <span className="video-play-button">
                     <span></span>
                   </span>
-                </button> 
+                </button>
               </FadeIn>
             </FadeInStagger>
           </div>
@@ -169,11 +189,11 @@ export default function HeroSection() {
           alt="shape"
         />
       </div>
-     <VideoModal
+      <VideoModal
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
         videoId="AhnFKu75mgk" // Replace with your YouTube video ID
-      /> 
+      />
     </section>
   );
 }

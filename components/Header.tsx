@@ -6,7 +6,7 @@ import Logo from "./Logo";
 import Button from "./shared/Button";
 import { useState } from "react";
 import LogoSmall from "./LogoSmall";
-
+import { sendGAEvent } from "@next/third-parties/google";
 
 export default function Header() {
   const { scrollY } = useScroll(); // Framer's built-in scroll tracking
@@ -19,8 +19,8 @@ export default function Header() {
   return (
     <header className="z-[999] relative w-full ">
       <m.nav
-        initial={{ y: -250, x:"-50%", opacity: 0 }}
-        animate={{ y: 2,x:"-50%",  opacity: 1 }}
+        initial={{ y: -250, x: "-50%", opacity: 0 }}
+        animate={{ y: 2, x: "-50%", opacity: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
         className={`fixed  px-2 container xs:px-6 top-2 left-1/2 rounded-full transition-all duration-300 ${
           scrolled
@@ -39,24 +39,34 @@ export default function Header() {
             transition={{ duration: 0.3 }}
           >
             <div className="hidden sm:block">
-
-            <Logo />
+              <Logo />
             </div>
             <div>
-
-            <LogoSmall width={60} className=" sm:hidden"/>
+              <LogoSmall width={60} className=" sm:hidden" />
             </div>
           </m.div>
 
           <div className="flex gap-4">
-            <Button href="https://app.ordinacijacms.com" className=" px-2 ">Aplikacija</Button>
+            <Button
+              onClick={() => {
+                sendGAEvent({
+                  event: "header_app_cta_clicked",
+                  category: "engagement",
+                  label: "Go to app",
+                  value: 1,
+                });
+              }}
+              href="https://app.ordinacijacms.com"
+              className=" px-2 "
+            >
+              Aplikacija
+            </Button>
             <Button invert href="/kontakt" className="">
               Kontakt
             </Button>
           </div>
         </m.div>
       </m.nav>
-     
     </header>
   );
 }

@@ -5,6 +5,7 @@ import { LazyMotion, domAnimation } from "framer-motion";
 import Header from "@/components/Header";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const poppins = Poppins({
   subsets: ["latin"], // Choose language subsets as needed
@@ -54,6 +55,7 @@ export default function RootLayout({
           </ActiveSectionContextProvider>
         </LazyMotion>
       </body>
+      <GoogleAnalytics gaId="G-Z821ZH8DDP" />
     </html>
   );
 }
