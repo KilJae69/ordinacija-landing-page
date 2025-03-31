@@ -49,12 +49,7 @@ export default function Header() {
           <div className="flex gap-4">
             <Button
               onClick={() => {
-                sendGAEvent({
-                  event: "header_app_cta_clicked",
-                  category: "engagement",
-                  label: "Go to app",
-                  value: 1,
-                });
+                sendGAEvent('event', 'headerCTAClicked', { value: "xyz" })
               }}
               href="https://app.ordinacijacms.com"
               className=" px-2 "

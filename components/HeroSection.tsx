@@ -129,12 +129,7 @@ export default function HeroSection() {
               <FadeIn className="mt-6 flex flex-col  sm:flex-row gap-8 mb-8 sm:mb-0">
                 <Button
                   onClick={() =>
-                    sendGAEvent({
-                      event: "app_button_click",
-                      category: "engagement",
-                      label: "Start Today",
-                      value: 1,
-                    })
+                    sendGAEvent('event', 'heroCTAClicked', { value: "xyz" })
                   }
                   className="text-lg"
                   href="https://app.ordinacijacms.com"
@@ -144,7 +139,7 @@ export default function HeroSection() {
                 <button
                   onClick={() => {
                     setModalOpen(true);
-                    sendGAEvent('event', 'buttonClicked', { value: 'xyz' })
+                    sendGAEvent('event', 'videoClicked', { value: "xyz" })
                   }}
                   className="flex group relative  self-center items-center sm:self-auto gap-2 text-slate-800 font-semibold"
                 >

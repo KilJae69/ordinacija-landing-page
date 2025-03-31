@@ -147,12 +147,7 @@ export default function PricingSection() {
 
             <Button
               onClick={() => {
-                sendGAEvent({
-                  event: "pricing_cta_clicked",
-                  category: "engagement",
-                  label: "Pricing Section",
-                  value: 1,
-                });
+                sendGAEvent('event', 'pricingCTAClicked', { value: "xyz" })
               }}
               href="https://app.ordinacijacms.com"
               className="w-full"
