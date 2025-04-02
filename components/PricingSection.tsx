@@ -7,7 +7,7 @@ import { Switch } from "./shared/Switch";
 import { FadeIn } from "./shared/FadeIn";
 import Image from "next/image";
 
-import { GAEvents } from "@/lib/ga4";
+// import { GAEvents } from "@/lib/ga4";
 
 export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(true);
@@ -147,7 +147,7 @@ export default function PricingSection() {
             </ul>
 
             <Button
-             onClick={() => GAEvents.ctaClick("Pricing CTA Clicked")}
+            //  onClick={() => GAEvents.ctaClick("Pricing CTA Clicked")}
               href="https://app.ordinacijacms.com"
               className="w-full"
             >

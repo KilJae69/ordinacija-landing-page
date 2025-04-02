@@ -75,25 +75,23 @@ export default function RootLayout({
             <Footer />
           </ActiveSectionContextProvider>
         </LazyMotion>
-          {/* Hybrid Approach - Next.js Script for loading, Partytown for execution */}
-          <Script
-          id="gtag-loader"
+          {/* GA4 Implementation */}
+        <Script
+          id="gtag-init"
           strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-Z821ZH8DDP"
-        />
-        <script
-          type="text/partytown"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-Z821ZH8DDP', {
-                send_page_view: true,
-                debug_mode: ${process.env.NODE_ENV === 'development'}
-              });
+              gtag('config', 'G-Z821ZH8DDP');
             `,
           }}
+        />
+        <Script
+          id="gtag-script"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-Z821ZH8DDP"
         />
       </body>
       {/* <GoogleAnalytics gaId="G-Z821ZH8DDP" /> */}
