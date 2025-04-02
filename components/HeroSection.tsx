@@ -7,7 +7,6 @@ import LottieComponent from "./shared/LottieComponent";
 import { useState } from "react";
 import VideoModal from "./shared/VideoModal";
 
-
 // import dynamic from "next/dynamic";
 // import { useActiveSectionContext } from "@/context/active-section-context";
 
@@ -128,6 +127,8 @@ export default function HeroSection() {
               </ul>
               <FadeIn className="mt-6 flex flex-col  sm:flex-row gap-8 mb-8 sm:mb-0">
                 <Button
+                  data-ga-event="video_play"
+                  data-ga-params='{"video_id":"demo_video"}'
                   //  onClick={() => GAEvents.ctaClick("Počnite danas")}
                   className="text-lg"
                   href="https://app.ordinacijacms.com"

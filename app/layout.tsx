@@ -8,8 +8,7 @@ import Footer from "@/components/Footer";
 // import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { Partytown } from "@qwik.dev/partytown/react";
-import Script from "next/script";
-// import Script from "next/script";
+import ClientSideAnalytics from "@/components/ClientSideAnalytics";
 
 const poppins = Poppins({
   subsets: ["latin"], // Choose language subsets as needed
@@ -48,19 +47,17 @@ export default function RootLayout({
   return (
     <html lang="bs">
       <head>
-        {/* Preconnect for better performance */}
-        <link
-          rel="preconnect"
-          href="https://www.google-analytics.com"
-          as="script"
-        />
+        {/* Preconnect with proper attributes */}
         <link
           rel="preconnect"
           href="https://www.googletagmanager.com"
           as="script"
+          crossOrigin="anonymous"
         />
+
+        {/* Partytown should be in head */}
         <Partytown
-          forward={["gtag", "dataLayer.push"]}
+          forward={["dataLayer.push"]} // Only forward what's needed
           debug={process.env.NODE_ENV === "development"}
         />
       </head>
@@ -75,24 +72,8 @@ export default function RootLayout({
             <Footer />
           </ActiveSectionContextProvider>
         </LazyMotion>
-          {/* GA4 Implementation */}
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-Z821ZH8DDP');
-            `,
-          }}
-        />
-        <Script
-          id="gtag-script"
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-Z821ZH8DDP"
-        />
+        {/* Single GA4 script implementation */}
+        <ClientSideAnalytics />
       </body>
       {/* <GoogleAnalytics gaId="G-Z821ZH8DDP" /> */}
     </html>
