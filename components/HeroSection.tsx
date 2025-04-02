@@ -6,6 +6,7 @@ import Button from "./shared/Button";
 import LottieComponent from "./shared/LottieComponent";
 import { useState } from "react";
 import VideoModal from "./shared/VideoModal";
+import { GAEvents } from "@/lib/ga4";
 
 // import dynamic from "next/dynamic";
 // import { useActiveSectionContext } from "@/context/active-section-context";
@@ -138,7 +139,7 @@ export default function HeroSection() {
                 <button
                   onClick={() => {
                     setModalOpen(true);
-                    // GAEvents.videoPlay("hero_demo_video");
+                    GAEvents.videoPlay("hero_demo_video")
                   }}
                   className="flex group relative  self-center items-center sm:self-auto gap-2 text-slate-800 font-semibold"
                 >
