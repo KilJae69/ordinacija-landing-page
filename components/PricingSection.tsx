@@ -6,7 +6,8 @@ import Button from "@/components/shared/Button";
 import { Switch } from "./shared/Switch";
 import { FadeIn } from "./shared/FadeIn";
 import Image from "next/image";
-import { sendGAEvent } from "@next/third-parties/google";
+
+import { GAEvents } from "@/lib/ga4";
 
 export default function PricingSection() {
   const [isYearly, setIsYearly] = useState(true);
@@ -146,9 +147,7 @@ export default function PricingSection() {
             </ul>
 
             <Button
-              onClick={() => {
-                sendGAEvent('event', 'pricingCTAClicked', { value: "xyz" })
-              }}
+             onClick={() => GAEvents.ctaClick("Pricing CTA Clicked")}
               href="https://app.ordinacijacms.com"
               className="w-full"
             >

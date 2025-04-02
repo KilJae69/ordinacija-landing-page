@@ -6,7 +6,8 @@ import Logo from "./Logo";
 import Button from "./shared/Button";
 import { useState } from "react";
 import LogoSmall from "./LogoSmall";
-import { sendGAEvent } from "@next/third-parties/google";
+
+import { GAEvents } from "@/lib/ga4";
 
 export default function Header() {
   const { scrollY } = useScroll(); // Framer's built-in scroll tracking
@@ -48,9 +49,7 @@ export default function Header() {
 
           <div className="flex gap-4">
             <Button
-              onClick={() => {
-                sendGAEvent('event', 'headerCTAClicked', { value: "xyz" })
-              }}
+             onClick={() => GAEvents.ctaClick("Header CTA")}
               href="https://app.ordinacijacms.com"
               className=" px-2 "
             >

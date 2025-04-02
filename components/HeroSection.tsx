@@ -6,7 +6,8 @@ import Button from "./shared/Button";
 import LottieComponent from "./shared/LottieComponent";
 import { useState } from "react";
 import VideoModal from "./shared/VideoModal";
-import { sendGAEvent } from "@next/third-parties/google";
+
+import { GAEvents } from "@/lib/ga4";
 
 // import dynamic from "next/dynamic";
 // import { useActiveSectionContext } from "@/context/active-section-context";
@@ -128,9 +129,7 @@ export default function HeroSection() {
               </ul>
               <FadeIn className="mt-6 flex flex-col  sm:flex-row gap-8 mb-8 sm:mb-0">
                 <Button
-                  onClick={() =>
-                    sendGAEvent('event', 'heroCTAClicked', { value: "xyz" })
-                  }
+                   onClick={() => GAEvents.ctaClick("Počnite danas")}
                   className="text-lg"
                   href="https://app.ordinacijacms.com"
                 >
@@ -139,7 +138,7 @@ export default function HeroSection() {
                 <button
                   onClick={() => {
                     setModalOpen(true);
-                    sendGAEvent('event', 'videoClicked', { value: "xyz" })
+                    GAEvents.videoPlay("hero_demo_video");
                   }}
                   className="flex group relative  self-center items-center sm:self-auto gap-2 text-slate-800 font-semibold"
                 >
