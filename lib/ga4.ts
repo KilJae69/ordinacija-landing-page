@@ -9,18 +9,24 @@ declare global {
 }
 
 export const sendGAEvent = (eventName: string, eventParams?: Record<string, any>) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', eventName, eventParams);
-  } else {
-    console.warn('GA4 not loaded yet, queuing event:', eventName, eventParams);
-    // Queue events if GA4 isn't loaded yet
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': eventName,
-      ...eventParams
-    });
-  }
-};
+    try {
+      if (typeof window !== 'undefined') {
+        if (window.gtag) {
+          console.log('Sending GA event:', eventName, eventParams);
+          window.gtag('event', eventName, eventParams);
+        } else {
+          console.log('Queueing GA event:', eventName, eventParams);
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': eventName,
+            ...eventParams
+          });
+        }
+      }
+    } catch (e) {
+      console.error('GA Event Error:', e);
+    }
+  };
 
 // Common event types for better type safety
 export const GAEvents = {
