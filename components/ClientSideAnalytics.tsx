@@ -7,6 +7,7 @@ export default function ClientSideAnalytics() {
     <>
       <Script
         id="gtag-init"
+        type="text/partytown"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -22,6 +23,7 @@ export default function ClientSideAnalytics() {
       />
       <Script
         id="gtag-script"
+        type="text/partytown"
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-Z821ZH8DDP"
       />
