@@ -11,17 +11,12 @@ declare global {
 export const sendGAEvent = (eventName: string, eventParams?: Record<string, any>) => {
     try {
       if (typeof window !== 'undefined') {
-        if (window.gtag) {
-          console.log('Sending GA event:', eventName, eventParams);
-          window.gtag('event', eventName, eventParams);
-        } else {
-          console.log('Queueing GA event:', eventName, eventParams);
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'event': eventName,
-            ...eventParams
-          });
-        }
+        console.log('Sending GA event:', eventName, eventParams);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: eventName,
+          ...eventParams
+        });
       }
     } catch (e) {
       console.error('GA Event Error:', e);

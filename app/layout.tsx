@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 // import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { Partytown } from "@qwik.dev/partytown/react";
+import Script from "next/script";
 // import Script from "next/script";
 
 const poppins = Poppins({
@@ -48,8 +49,16 @@ export default function RootLayout({
     <html lang="bs">
       <head>
         {/* Preconnect for better performance */}
-        <link rel="preconnect" href="https://www.google-analytics.com" as="script"/>
-        <link rel="preconnect" href="https://www.googletagmanager.com" as="script"/>
+        <link
+          rel="preconnect"
+          href="https://www.google-analytics.com"
+          as="script"
+        />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          as="script"
+        />
         <Partytown
           forward={["gtag", "dataLayer.push"]}
           debug={process.env.NODE_ENV === "development"}
@@ -66,7 +75,12 @@ export default function RootLayout({
             <Footer />
           </ActiveSectionContextProvider>
         </LazyMotion>
-        {/* GA4 Implementation - CORRECTED */}
+          {/* Hybrid Approach - Next.js Script for loading, Partytown for execution */}
+          <Script
+          id="gtag-loader"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-Z821ZH8DDP"
+        />
         <script
           type="text/partytown"
           dangerouslySetInnerHTML={{
@@ -80,11 +94,6 @@ export default function RootLayout({
               });
             `,
           }}
-        />
-        <script
-          type="text/partytown"
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-Z821ZH8DDP"
         />
       </body>
       {/* <GoogleAnalytics gaId="G-Z821ZH8DDP" /> */}
