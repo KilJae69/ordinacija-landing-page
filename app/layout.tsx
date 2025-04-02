@@ -7,7 +7,6 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/Footer";
 // import { GoogleAnalytics } from '@next/third-parties/google'
 
-
 import { Partytown } from "@qwik.dev/partytown/react";
 import Script from "next/script";
 
@@ -48,10 +47,13 @@ export default function RootLayout({
   return (
     <html lang="bs">
       <head>
-        <Partytown 
-          forward={['gtag', 'dataLayer.push']}
-          debug={process.env.NODE_ENV === 'development'}
+        <Partytown
+          forward={["gtag", "dataLayer.push"]}
+          debug={process.env.NODE_ENV === "development"}
         />
+        {/* Preconnect for better performance */}
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body
         className={`${poppins.variable} relative  antialiased flex flex-col min-h-screen`}
@@ -64,23 +66,39 @@ export default function RootLayout({
             <Footer />
           </ActiveSectionContextProvider>
         </LazyMotion>
-        {/* GA4 Implementation */}
+        {/* GA4 with Partytown - CORRECTED */}
         <Script
           id="gtag-init"
-          strategy="afterInteractive"
+          type="text/partytown"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-Z821ZH8DDP');
+              gtag('config', 'G-Z821ZH8DDP', {
+                send_page_view: true,
+                 debug_mode: true
+              });
             `,
           }}
         />
         <Script
           id="gtag-script"
-          strategy="afterInteractive"
+          type="text/partytown"
           src="https://www.googletagmanager.com/gtag/js?id=G-Z821ZH8DDP"
+          strategy="afterInteractive"
+        />
+
+        <Script
+          id="ga-debug"
+          dangerouslySetInnerHTML={{
+            __html: `
+      console.log('GA4 Debug:');
+      console.log('Window.gtag exists:', typeof window.gtag === 'function');
+      console.log('DataLayer:', window.dataLayer || 'Not initialized');
+    `,
+          }}
+          strategy="afterInteractive"
         />
       </body>
       {/* <GoogleAnalytics gaId="G-Z821ZH8DDP" /> */}
