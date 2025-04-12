@@ -128,7 +128,7 @@ export default function HeroSection() {
               </ul>
               <FadeIn className="mt-6 flex flex-col  sm:flex-row gap-8 mb-8 sm:mb-0">
                 <Button
-                  onClick={()=> sendCustomEvent('event', 'cta_click', { label: 'My CTA Button' })}
+                  onClick={()=> sendCustomEvent('event', 'cta_click', { value: 'xyz' })}
                   className="text-lg"
                   href="https://app.ordinacijacms.com"
                 >
@@ -137,7 +137,7 @@ export default function HeroSection() {
                 <button
                   onClick={() => {
                     setModalOpen(true);
-                    sendCustomEvent('event', 'cta_click', { label: 'My CTA Button' })
+                    sendCustomEvent('event', 'cta_click', { value: 'xyz' })
                   }}
                   className="flex group relative  self-center items-center sm:self-auto gap-2 text-slate-800 font-semibold"
                 >
