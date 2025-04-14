@@ -20,6 +20,7 @@ function TextInput({
   name: string;
   errorMessage: string;
 }) {
+  console.log();
   return (
     <div className="group relative z-0 transition-all focus-within:z-10">
       <input
