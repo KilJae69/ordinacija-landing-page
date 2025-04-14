@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "OrdinacijaCMS",
     images: [
       {
-        url: "/ordinacija-og.png", // Postavi tačan URL do slike
+        url: "/ordinacijacms-og.png", // Postavi tačan URL do slike
         width: 1200,
         height: 630,
         alt: "OrdinacijaCMS - SaaS platforma za medicinske prakse",
