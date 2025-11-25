@@ -134,7 +134,7 @@ export default function HeroSection() {
                 >
                   Počnite danas
                 </Button>
-                <button
+                {/* <button
                   onClick={() => {
                     // setModalOpen(true);
                     sendCustomEvent('event', 'cta_click', { value: 'xyz' })
@@ -147,7 +147,7 @@ export default function HeroSection() {
                   <span className="video-play-button">
                     <span></span>
                   </span>
-                </button>
+                </button> */}
               </FadeIn>
             </FadeInStagger>
           </div>
